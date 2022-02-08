@@ -1,0 +1,11 @@
+@import '../../styles/settings.scss';
+
+.currentWeather {
+  margin: 20px auto;
+  background: $color-light;
+}
+
+.title {
+  text-align: center;
+  color: $color-dark;
+}

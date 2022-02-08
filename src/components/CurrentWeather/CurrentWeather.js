@@ -1,4 +1,6 @@
+import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
+import styles from './CurrentWeather.module.scss';
 
 const CurrentWeather = () => {
   const dispatch = useDispatch();
@@ -9,7 +11,9 @@ const CurrentWeather = () => {
     getCurrentWeather(lat, lon);
   };
 
-  navigator.geolocation.getCurrentPosition(getData);
+  useEffect(() => {
+    navigator.geolocation.getCurrentPosition(getData);
+  }, []);
 
   const getCurrentWeather = (lat, lon) => {
     const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=132ee331b923fd839e47669db3f85709`;
@@ -28,8 +32,8 @@ const CurrentWeather = () => {
   };
 
   return (
-    <div>
-      <h3>Current Weather</h3>
+    <div className={styles.currentWeather}>
+      <h2 className={styles.title}>Current Weather</h2>
     </div>
   );
 };
