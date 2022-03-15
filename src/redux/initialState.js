@@ -1,5 +1,10 @@
+import { initialCurrentData } from './currentWeatherRedux';
+
 const initialState = {
-  currentWeather: {},
+  currentWeather: initialCurrentData,
+  currentPollution: initialCurrentData,
+  geolocation: initialCurrentData,
+  dailyForecast: initialCurrentData,
 };
 
 export default initialState;

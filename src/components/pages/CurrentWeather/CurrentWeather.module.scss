@@ -1,0 +1,13 @@
+@import '../../../styles/settings.scss';
+
+.currentWeather {
+  margin: 50px auto;
+  background: $color-light;
+  color: $color-text;
+  border-radius: $radius;
+}
+
+.main {
+  margin: 50px 0 0 10px;
+  font-size: $base-size * 3;
+}

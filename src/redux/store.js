@@ -1,19 +1,29 @@
-import { createStore } from 'redux';
+import { createStore, combineReducers, compose, applyMiddleware } from 'redux';
+import thunk from 'redux-thunk';
 import initialState from './initialState';
+import currentWeatherReducer from './currentWeatherRedux';
+import currentPollutionReducer from './currentPollutionRedux';
+import geolocationReducer from './geolocationRedux';
+import dailyForecastReducer from './dailyForecastRedux';
 
-const reducer = (state, action) => {
-  switch (action.type) {
-    case 'ADD_CURRENT_DATA':
-      return action.payload;
-    default:
-      return state;
-  }
+const subreducers = {
+  currentWeather: currentWeatherReducer,
+  currentPollution: currentPollutionReducer,
+  geolocation: geolocationReducer,
+  dailyForecast: dailyForecastReducer,
 };
 
+const reducer = combineReducers(subreducers);
 const store = createStore(
   reducer,
   initialState,
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+
+  compose(
+    applyMiddleware(thunk),
+    window.__REDUX_DEVTOOLS_EXTENSION__
+      ? window.__REDUX_DEVTOOLS_EXTENSION__()
+      : (f) => f
+  )
 );
 
 export default store;

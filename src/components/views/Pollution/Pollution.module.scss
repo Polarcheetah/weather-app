@@ -1,0 +1,17 @@
+@import '../../../styles/settings.scss';
+
+.airPollution {
+  padding: $base-size;
+  text-align: center;
+  background: lighten($color-dark, 75%);
+}
+
+.header {
+  font-size: $base-size * 3;
+  margin: $base-size;
+}
+.image {
+  width: 64px;
+  height: 64px;
+  margin: $base-size;
+}

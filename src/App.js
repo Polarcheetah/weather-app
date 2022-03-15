@@ -1,23 +1,21 @@
-import { Container, Nav, Navbar, Row } from 'react-bootstrap';
-import CurrentWeather from './components/CurrentWeather/CurrentWeather';
+import { Container } from 'react-bootstrap';
+import { Route, Routes } from 'react-router-dom';
+import CurrentWeather from './components/pages/CurrentWeather/CurrentWeather';
+import DailyForecast from './components/pages/DailyForecast/DailyForecast';
+import NotFound from './components/pages/NotFound/NotFound';
+import NavBar from './components/views/NavBar/NavBar';
 import './styles/custom.scss';
 
 function App() {
   return (
     <div className='App'>
-      <Navbar bg='light' expand='lg'>
-        <Navbar.Toggle aria-controls='basic-navbar-nav' />
-        <Navbar.Collapse id='basic-navbar-nav'>
-          <Nav className='me-auto'>
-            <Nav.Link href='#home'>Home</Nav.Link>
-            <Nav.Link href='#link'>Link</Nav.Link>
-          </Nav>
-        </Navbar.Collapse>
-      </Navbar>
       <Container>
-        <Row>
-          <CurrentWeather />
-        </Row>
+        <NavBar />
+        <Routes>
+          <Route path='/' element={<CurrentWeather />} />
+          <Route path='/daily' element={<DailyForecast />} />
+          <Route path='*' element={<NotFound />} />
+        </Routes>
       </Container>
     </div>
   );

@@ -1,0 +1,11 @@
+@import '../../../styles/settings.scss';
+
+.searchForm {
+  margin: 30px 0;
+  min-width: 200px;
+  display: flex;
+}
+
+.textInput {
+  background: darken($color-light, 3%);
+}

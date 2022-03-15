@@ -1,0 +1,13 @@
+@import '../../../styles/settings.scss';
+
+.locationName {
+  margin: 10px;
+  padding: 0;
+  font-size: $base-size * 3;
+}
+
+.actualDate {
+  margin: 10px;
+  padding: 0;
+  font-size: $base-size * 2;
+}
