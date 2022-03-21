@@ -9,8 +9,8 @@ import './styles/custom.scss';
 function App() {
   return (
     <div className='App'>
+      <NavBar />
       <Container>
-        <NavBar />
         <Routes>
           <Route path='/' element={<CurrentWeather />} />
           <Route path='/daily' element={<DailyForecast />} />

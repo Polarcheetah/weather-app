@@ -1,6 +1,9 @@
 //selectors
+export const getDayById = (state, dayId) =>
+  state.dailyForecast.data.daily[dayId];
+
 //actions
-const createActionName = (actionName) => `app/currentPollution/${actionName}`;
+const createActionName = (actionName) => `app/dailyForecast/${actionName}`;
 const FETCH_START = createActionName('FETCH_START');
 const GET_DATA = createActionName('GET_CURRENT_POLLUTION');
 const FETCH_ERROR = createActionName('FETCH_ERROR');
@@ -15,7 +18,7 @@ export const fetchError = (payload) => ({ type: FETCH_ERROR, payload });
 
 //fetching data
 export const fetchDailyForecast = ({ lat, lon }) => {
-  const url = `http://api.openweathermap.org/data/2.5/air_pollution?lat=${lat}&lon=${lon}&appid=132ee331b923fd839e47669db3f85709`;
+  const url = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&units=metric&exclude=current,minutely,hourly,alerts&appid=132ee331b923fd839e47669db3f85709`;
 
   return (dispatch) => {
     dispatch(fetchStart());

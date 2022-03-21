@@ -48,7 +48,7 @@ const CurrentWeather = () => {
   return (
     <div className={styles.currentWeather}>
       {loading && <p>Loading...</p>}
-      {!loading && !error && weather?.data && pollution?.data && (
+      {!loading && !error && weather.data?.coord && pollution.data?.coord && (
         <Container>
           <Location />
           <MainWeatherInfo />
