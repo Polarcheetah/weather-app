@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Form } from 'react-bootstrap';
 import { useDispatch } from 'react-redux';
 import { fetchGeolocation } from '../../../redux/geolocationRedux';
+import StyledButton from '../../styled-components/Button/StyledButton';
 import Button from '../Button/Button';
 import styles from './SearchForm.module.scss';
 
@@ -26,9 +27,9 @@ const SearchForm = () => {
         onChange={(e) => setCityName(e.target.value)}
       />
 
-      <Button onClick={handleSearch}>
+      <StyledButton onClick={handleSearch}>
         <i className='fa fa-search'></i>
-      </Button>
+      </StyledButton>
     </div>
   );
 };
