@@ -5,10 +5,12 @@ import DailyForecast from './components/pages/DailyForecast/DailyForecast';
 import NotFound from './components/pages/NotFound/NotFound';
 import NavBar from './components/views/NavBar/NavBar';
 import './styles/custom.scss';
+import { GlobalStyles } from './styles/globalStyles';
 
-function App() {
+function App(props) {
   return (
-    <div className='App'>
+    <div className={props.className}>
+      <GlobalStyles />
       <NavBar />
       <Container>
         <Routes>
