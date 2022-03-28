@@ -2,8 +2,8 @@ import { useEffect, useState } from 'react';
 import { Accordion, Container } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchDailyForecast } from '../../../redux/dailyForecastRedux';
+import StyledContainer from '../../styled-components/StyledContainer';
 import DayForecast from '../../views/DayForecast/DayForecast';
-import styles from './DailyForecast.module.scss';
 
 const DailyForecast = () => {
   const dispatch = useDispatch();
@@ -46,8 +46,8 @@ const DailyForecast = () => {
     <div>
       {loading && <p>Loading...</p>}
       {!loading && !error && daily.data?.daily && (
-        <Container>
-          <Accordion className={styles.accordion} defaultActiveKey='0'>
+        <Container as={StyledContainer}>
+          <Accordion defaultActiveKey='0'>
             {week.map((day) => (
               <DayForecast key={day} dayId={day} />
             ))}

@@ -1,16 +1,16 @@
 import { Col, Row } from 'react-bootstrap';
-import LocationBox from '../../common/LocationBox/LocationBox';
-import SearchForm from '../../common/SearchForm/SearchForm';
-import styles from './Location.module.scss';
+import StyledLocationBox from '../../styled-components/StyledLocationBox';
+import StyledRow from '../../styled-components/StyledRow';
+import StyledSearchForm from '../../styled-components/StyledSearchForm';
 
 const Location = () => {
   return (
-    <Row className={styles.row}>
+    <Row as={StyledRow} bg={0}>
       <Col>
-        <LocationBox />
+        <StyledLocationBox />
       </Col>
       <Col>
-        <SearchForm />
+        <StyledSearchForm />
       </Col>
     </Row>
   );

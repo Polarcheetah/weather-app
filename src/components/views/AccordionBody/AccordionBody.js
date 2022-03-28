@@ -1,53 +1,54 @@
 import { Col, Container, Row } from 'react-bootstrap';
 import { useSelector } from 'react-redux';
 import { getDayById } from '../../../redux/dailyForecastRedux';
-import styles from './AccordionBody.module.scss';
 
-const AccordionBody = ({ dayId }) => {
-  const dayParams = useSelector((state) => getDayById(state, dayId));
+const AccordionBody = (props) => {
+  const dayParams = useSelector((state) => getDayById(state, props.dayId));
   console.log(dayParams);
   return (
-    <Container className={styles.body}>
+    <Container className={props.className}>
       <Row>
-        <Col>
-          <h3 className={styles.header}>main weather info</h3>
-          <Row className={styles.mainInfoWrapper}>
-            <Col className={styles.paramName}>
-              <p>humidity:</p>
-              <p>pressure:</p>
-              <p>clouds:</p>
-              <p>wind:</p>
-            </Col>
-            <Col className={styles.param}>
-              <p>{dayParams.humidity}%</p>
-              <p>{dayParams.pressure}hPa</p>
-              <p>{dayParams.clouds}%</p>
-              <p>{dayParams.wind_speed}km/h</p>
-            </Col>
-          </Row>
+        <Col className='params'>
+          <h3 className='header'>main weather info</h3>
+          <div className='main'>
+            <p>humidity:</p>
+            <p>{dayParams.humidity}%</p>
+          </div>
+          <div className='main'>
+            <p>pressure:</p>
+            <p>{dayParams.pressure}hPa</p>
+          </div>
+          <div className='main'>
+            <p>clouds:</p>
+            <p>{dayParams.clouds}%</p>
+          </div>
+          <div className='main'>
+            <p>wind:</p>
+            <p>{dayParams.wind_speed}km/h</p>
+          </div>
         </Col>
-        <Col>
-          <Row className={styles.tempWrapper}>
-            <h3 className={styles.header}>temperature</h3>
-            <Col className={styles.paramName}>
-              <p>Morning:</p>
-              <p>Day:</p>
-              <p>Evening:</p>
-              <p>Night:</p>
-            </Col>
-            <Col className={styles.param}>
-              <p>{dayParams.temp.morn}°C</p>
-              <p>{dayParams.temp.day}°C</p>
-              <p>{dayParams.temp.eve}°C</p>
-              <p>{dayParams.temp.night}°C</p>
-            </Col>
-            <Col className={styles.param_feelsLike}>
-              <p>{dayParams.feels_like.morn}°C</p>
-              <p>{dayParams.feels_like.day}°C</p>
-              <p>{dayParams.feels_like.eve}°C</p>
-              <p>{dayParams.feels_like.night}°C</p>
-            </Col>
-          </Row>
+        <Col className='params'>
+          <h3 className='header'>temperature</h3>
+          <div className='temp'>
+            <p>Morning:</p>
+            <p>{dayParams.temp.morn}°C</p>
+            <p>{dayParams.feels_like.morn}°C</p>
+          </div>
+          <div className='temp'>
+            <p>Day:</p>
+            <p>{dayParams.temp.day}°C</p>
+            <p>{dayParams.feels_like.day}°C</p>
+          </div>
+          <div className='temp'>
+            <p>Evening:</p>
+            <p>{dayParams.temp.eve}°C</p>
+            <p>{dayParams.feels_like.eve}°C</p>
+          </div>
+          <div className='temp'>
+            <p>Night:</p>
+            <p>{dayParams.temp.night}°C</p>
+            <p>{dayParams.feels_like.night}°C</p>
+          </div>
         </Col>
       </Row>
     </Container>

@@ -1,16 +1,15 @@
 import { Accordion } from 'react-bootstrap';
-import AccordionBody from '../AccordionBody/AccordionBody';
-import AccordionHeader from '../AccordionHeader/AccordionHeader';
-import styles from './DayForecast.module.scss';
+import StyledAccordionBody from '../../styled-components/StyledAccordionBody';
+import StyledAccordionHeader from '../../styled-components/StyledAccordionHeader';
 
 const DayForecast = ({ dayId }) => {
   return (
-    <Accordion.Item eventKey={dayId} className={styles.accordionItem}>
+    <Accordion.Item eventKey={dayId}>
       <Accordion.Header>
-        <AccordionHeader dayId={dayId} />
+        <StyledAccordionHeader dayId={dayId} />
       </Accordion.Header>
       <Accordion.Body>
-        <AccordionBody dayId={dayId} />
+        <StyledAccordionBody dayId={dayId} />
       </Accordion.Body>
     </Accordion.Item>
   );

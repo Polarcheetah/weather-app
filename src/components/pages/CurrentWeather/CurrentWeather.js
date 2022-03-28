@@ -3,11 +3,11 @@ import { Container } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchCurrentPollutionData } from '../../../redux/currentPollutionRedux';
 import { fetchCurrentWeatherData } from '../../../redux/currentWeatherRedux';
+import StyledMainInfo from '../../styled-components/StyledMainInfo';
+import StyledWeatherDetails from '../../styled-components/StyledWeatherDetails';
+import StyledPollution from '../../styled-components/StyledPollution';
 import Location from '../../views/Location/Location';
-import MainWeatherInfo from '../../views/MainWeatherInfo/MainWeatherInfo';
-import Pollution from '../../views/Pollution/Pollution';
-import WeatherDetails from '../../views/WeatherDetails/WeatherDetails';
-import styles from './CurrentWeather.module.scss';
+import StyledContainer from '../../styled-components/StyledContainer';
 
 const CurrentWeather = () => {
   const dispatch = useDispatch();
@@ -46,14 +46,14 @@ const CurrentWeather = () => {
   }, [dispatch, lat, lon]);
 
   return (
-    <div className={styles.currentWeather}>
+    <div>
       {loading && <p>Loading...</p>}
       {!loading && !error && weather.data?.coord && pollution.data?.coord && (
-        <Container>
+        <Container as={StyledContainer}>
           <Location />
-          <MainWeatherInfo />
-          <WeatherDetails />
-          <Pollution />
+          <StyledMainInfo />
+          <StyledWeatherDetails />
+          <StyledPollution />
         </Container>
       )}
     </div>

@@ -1,16 +1,10 @@
+import { Row } from 'react-bootstrap';
 import { useSelector } from 'react-redux';
 import { getPollutionData } from '../../../redux/currentPollutionRedux';
-import styles from './Pollution.module.scss';
+import StyledRow from '../../styled-components/StyledRow';
 
-const Pollution = () => {
+const Pollution = (props) => {
   const pollution = useSelector(getPollutionData);
-  // const [iconCode, setIconCode] = useState('');
-
-  // useEffect(() => {
-  //   if (pollution.list) {
-  //     setIconCode(pollution.list[0].main.aqi);
-  //   }
-  // }, [pollution]);
 
   const nameAirQuality = (aqi) => {
     switch (aqi) {
@@ -29,15 +23,15 @@ const Pollution = () => {
     }
   };
   return (
-    <div className={styles.airPollution}>
-      <h3 className={styles.header}>Air pollution</h3>
-      <h4>{nameAirQuality(pollution.list[0].main.aqi)}</h4>
+    <Row as={StyledRow} className={props.className}>
+      <h3 className='title'>Air pollution</h3>
+      <h4 className='subtitle'>{nameAirQuality(pollution.list[0].main.aqi)}</h4>
       <img
-        className={styles.image}
+        className='image'
         alt='pollution img'
         src={`${process.env.PUBLIC_URL}/images/pollution/icon-${pollution.list[0].main.aqi}.png`}
       />
-    </div>
+    </Row>
   );
 };
 

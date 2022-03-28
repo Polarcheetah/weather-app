@@ -1,28 +1,14 @@
-import styles from './WeatherDetails.module.scss';
 import { Col, Row } from 'react-bootstrap';
 import { useSelector } from 'react-redux';
 import { getWeatherData } from '../../../redux/currentWeatherRedux';
+import StyledRow from '../../styled-components/StyledRow';
 
-const WeatherDetails = () => {
+const WeatherDetails = (props) => {
   const weatherData = useSelector(getWeatherData);
 
-  // const [humidity, setHumidity] = useState('');
-  // const [pressure, setPressure] = useState('');
-  // const [wind, setWind] = useState('');
-  // const [clouds, setClouds] = useState('');
-
-  // useEffect(() => {
-  //   if (weatherData.main && weatherData.wind && weatherData.clouds) {
-  //     setHumidity(weatherData.main.humidity);
-  //     setPressure(weatherData.main.pressure);
-  //     setWind(weatherData.wind.speed);
-  //     setClouds(weatherData.clouds.all);
-  //   }
-  // }, [weatherData]);
-
   return (
-    <div className={styles.details}>
-      <Row>
+    <div className={props.className}>
+      <Row as={StyledRow} bg={0}>
         <Col>
           <p>
             Humidity: <span>{weatherData.main.humidity}%</span>
