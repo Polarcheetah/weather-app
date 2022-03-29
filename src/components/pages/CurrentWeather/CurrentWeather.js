@@ -3,9 +3,9 @@ import { Container } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchCurrentPollutionData } from '../../../redux/currentPollutionRedux';
 import { fetchCurrentWeatherData } from '../../../redux/currentWeatherRedux';
-import StyledMainInfo from '../../styled-components/StyledMainInfo';
-import StyledWeatherDetails from '../../styled-components/StyledWeatherDetails';
-import StyledPollution from '../../styled-components/StyledPollution';
+import StyledMainInfo from '../../views/MainInfo/StyledMainInfo';
+import StyledWeatherDetails from '../../views/WeatherDetails/StyledWeatherDetails';
+import StyledPollution from '../../views/Pollution/StyledPollution';
 import Location from '../../views/Location/Location';
 import StyledContainer from '../../styled-components/StyledContainer';
 

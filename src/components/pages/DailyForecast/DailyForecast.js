@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { fetchDailyForecast } from '../../../redux/dailyForecastRedux';
 import StyledContainer from '../../styled-components/StyledContainer';
 import DayForecast from '../../views/DayForecast/DayForecast';
+import Location from '../../views/Location/Location';
 
 const DailyForecast = () => {
   const dispatch = useDispatch();

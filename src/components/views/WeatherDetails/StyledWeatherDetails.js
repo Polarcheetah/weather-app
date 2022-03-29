@@ -1,9 +1,9 @@
 import styled from 'styled-components';
-import WeatherDetails from '../views/WeatherDetails/WeatherDetails';
+import WeatherDetails from './WeatherDetails';
 
 const StyledWeatherDetails = styled(WeatherDetails)`
   p {
-    font-size: ${(props) => props.theme.baseSize * 2}px;
+    font-size: ${(props) => props.theme.baseSize * 1.2}px;
     text-align: center;
     margin: 20px;
   }
@@ -14,7 +14,7 @@ const StyledWeatherDetails = styled(WeatherDetails)`
 
 StyledWeatherDetails.defaultProps = {
   theme: {
-    baseSize: 12,
+    baseSize: 14,
   },
 };
 export default StyledWeatherDetails;

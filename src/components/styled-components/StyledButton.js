@@ -9,6 +9,10 @@ const StyledButton = styled(Button)`
   width: 50px;
   color: white;
 
+  i {
+    font-size: ${(props) => props.theme.baseSize}px;
+  }
+
   &:hover {
     background: ${(props) => props.theme.colorSuccessHover};
   }
@@ -19,6 +23,7 @@ StyledButton.defaultProps = {
     colorSuccess: '#b8e994',
     colorSuccessHover: darken(0.1, '#b8e994'),
     radius: '5px',
+    baseSize: 14,
   },
 };
 

@@ -1,6 +1,6 @@
 import { Accordion } from 'react-bootstrap';
-import StyledAccordionBody from '../../styled-components/StyledAccordionBody';
-import StyledAccordionHeader from '../../styled-components/StyledAccordionHeader';
+import StyledAccordionBody from '../AccordionBody/StyledAccordionBody';
+import StyledAccordionHeader from '../AccordionHeader/StyledAccordionHeader';
 
 const DayForecast = ({ dayId }) => {
   return (

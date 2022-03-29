@@ -16,7 +16,7 @@ const MainInfo = (props) => {
         />
         <p className='description'>{weatherData.weather[0].description}</p>
       </Col>
-      <Col>
+      <Col className='tempWrapper'>
         <p className='temperature'>{Math.round(weatherData.main.temp)}°C</p>
         <p className='feelsLike'>
           Feels like: {Math.round(weatherData.main.feels_like)}°C

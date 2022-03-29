@@ -1,6 +1,6 @@
 import { lighten } from 'polished';
 import styled from 'styled-components';
-import AccordionHeader from '../views/AccordionHeader/AccordionHeader';
+import AccordionHeader from './AccordionHeader';
 
 const StyledAccordionHeader = styled(AccordionHeader)`
   .row {
@@ -10,7 +10,7 @@ const StyledAccordionHeader = styled(AccordionHeader)`
     margin: 0;
 
     .date {
-      font-size: ${(props) => props.theme.baseSize * 2}px;
+      font-size: ${(props) => props.theme.baseSize * 1.5}px;
       margin: 0;
     }
 
@@ -20,15 +20,15 @@ const StyledAccordionHeader = styled(AccordionHeader)`
       align-items: center;
 
       .tempDay {
-        font-size: ${(props) => props.theme.baseSize * 2}px;
+        font-size: ${(props) => props.theme.baseSize * 1.5}px;
         margin: 0;
       }
 
       .tempNight {
-        font-size: ${(props) => props.theme.baseSize * 2}px;
+        font-size: ${(props) => props.theme.baseSize * 1.5}px;
         color: ${(props) => props.theme.colorLight};
         margin: 0;
-        margin-left: ${(props) => props.theme.baseSize * 2}px;
+        margin-left: ${(props) => props.theme.baseSize * 1.5}px;
       }
     }
 
@@ -48,7 +48,7 @@ const StyledAccordionHeader = styled(AccordionHeader)`
 
 StyledAccordionHeader.defaultProps = {
   theme: {
-    baseSize: 12,
+    baseSize: 14,
     imageSize: 64,
     colorLight: lighten(0.7, '#000'),
   },

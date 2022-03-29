@@ -4,7 +4,6 @@ import { getDayById } from '../../../redux/dailyForecastRedux';
 
 const AccordionBody = (props) => {
   const dayParams = useSelector((state) => getDayById(state, props.dayId));
-  console.log(dayParams);
   return (
     <Container className={props.className}>
       <Row>

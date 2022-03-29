@@ -23,7 +23,7 @@ const Pollution = (props) => {
     }
   };
   return (
-    <Row as={StyledRow} className={props.className}>
+    <Row as={StyledRow} className={props.className} last={true}>
       <h3 className='title'>Air pollution</h3>
       <h4 className='subtitle'>{nameAirQuality(pollution.list[0].main.aqi)}</h4>
       <img

@@ -1,5 +1,5 @@
 import { useSelector } from 'react-redux';
-import showDate from '../../utils/showDate';
+import showDate from '../../../utils/showDate';
 
 const LocationBox = (props) => {
   const weatherName = useSelector((state) => state.currentWeather.data.name);

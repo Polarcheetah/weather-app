@@ -1,12 +1,12 @@
 import { Nav, Navbar } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
 
-const NavBar = () => {
+const NavBar = (props) => {
   return (
-    <Navbar bg='light' expand='lg'>
+    <Navbar bg='light' expand='lg' className={props.className}>
       <Navbar.Toggle aria-controls='basic-navbar-nav' />
       <Navbar.Collapse id='basic-navbar-nav'>
-        <Nav className='me-auto'>
+        <Nav className='nav'>
           <Nav.Link as={NavLink} to='/'>
             Current Weather
           </Nav.Link>

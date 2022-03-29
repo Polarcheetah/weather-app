@@ -1,16 +1,17 @@
 import { lighten } from 'polished';
 import styled from 'styled-components';
-import AccordionBody from '../views/AccordionBody/AccordionBody';
+import AccordionBody from './AccordionBody';
 
 const StyledAccordionBody = styled(AccordionBody)`
   .header {
     text-align: center;
     margin-top: 15px;
     margin-bottom: 50px;
+    font-size: ${(props) => props.theme.baseSize * 1.5}px;
   }
 
   .params {
-    font-size: ${(props) => props.theme.baseSize * 1.5}px;
+    font-size: ${(props) => props.theme.baseSize * 1.2}px;
   }
 
   .main {
@@ -44,7 +45,7 @@ const StyledAccordionBody = styled(AccordionBody)`
 
 StyledAccordionBody.defaultProps = {
   theme: {
-    baseSize: 12,
+    baseSize: 14,
     colorLight: lighten(0.6, '#000'),
   },
 };

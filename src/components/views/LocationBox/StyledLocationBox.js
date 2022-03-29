@@ -1,22 +1,22 @@
 import styled from 'styled-components';
-import LocationBox from '../common/LocationBox';
+import LocationBox from './LocationBox';
 
 const StyledLocationBox = styled(LocationBox)`
   margin: 10px;
   padding: 0;
 
   h3 {
-    font-size: ${(props) => props.theme.fontSize * 3}px;
+    font-size: ${(props) => props.theme.baseSize * 2}px;
   }
 
   h4 {
-    font-size: ${(props) => props.theme.fontSize * 2}px;
+    font-size: ${(props) => props.theme.baseSize * 1.5}px;
   }
 `;
 
 StyledLocationBox.defaultProps = {
   theme: {
-    fontSize: 12,
+    baseSize: 14,
   },
 };
 
